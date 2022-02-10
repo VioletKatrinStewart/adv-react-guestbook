@@ -1,21 +1,21 @@
-import { useContext, createContext, useState } from 'react'
+import { useContext, createContext, useState } from 'react';
 
-const EntryContext = createContext()
+const EntryContext = createContext();
 
 const EntryProvider = ({ children }) => {
-  const [entries, setEntries] = useState([])
+  const [entries, setEntries] = useState([]);
 
-  return <EntryContext.Provider value={{ entries, setEntries }}>{children}</EntryContext.Provider>
-}
+  return <EntryContext.Provider value={{ entries, setEntries }}>{children}</EntryContext.Provider>;
+};
 
 const useEntries = () => {
-  const context = useContext(EntryContext)
+  const context = useContext(EntryContext);
 
   if (context === undefined) {
-    throw new Error('useEntries must be defined within an EntryContext Provider')
+    throw new Error('useEntries must be defined within an EntryContext Provider');
   }
 
-  return context
-}
+  return context;
+};
 
-export { EntryProvider, useEntries }
+export { EntryProvider, useEntries };
