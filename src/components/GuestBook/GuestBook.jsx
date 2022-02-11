@@ -38,7 +38,7 @@ export default function GuestBook() {
 
   return (
     <div>
-      <h1>Form</h1>
+      <h1>Guest Entries</h1>
       {!user && guestNameInput}
       <form onSubmit={handleSubmit}>
         {/*  */}
@@ -65,13 +65,4 @@ export default function GuestBook() {
   );
 }
 
-{
-  /* <label>Name</label>
-        <input
-          type="text"
-          id="nameEntry"
-          value={user}
-          placeholder="Write your name here"
-          onChange={(e) => setUser(e.target.value)}
-        /> */
-}
+
