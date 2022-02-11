@@ -34,8 +34,6 @@ export default function GuestBook() {
     </div>
   );
 
-  const displayMessage = user ? `Thanks for Signing ${user}!` : 'Please Sign the Guestbook!';
-
   return (
     <div>
       <h1>Guest Entries</h1>
@@ -64,5 +62,3 @@ export default function GuestBook() {
     </div>
   );
 }
-
-
