@@ -1,5 +1,6 @@
 import React from 'react';
+import './Footer.css';
 
 export default function Footer() {
-  return <div>© 2021 - Alchemy Code Lab</div>;
+  return <div className="footerdiv">© 2021 - Alchemy Code Lab</div>;
 }

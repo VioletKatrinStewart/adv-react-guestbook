@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEntries } from '../../Context/EntryContext';
 import { useUser } from '../../Context/UserContext';
+import './GuestBook.css';
 
 export default function GuestBook() {
   const [name, setName] = useState('');
@@ -35,7 +36,7 @@ export default function GuestBook() {
   );
 
   return (
-    <div>
+    <div className="guestbookdiv">
       <h1>Guest Entries</h1>
       {!user && guestNameInput}
       <form onSubmit={handleSubmit}>
