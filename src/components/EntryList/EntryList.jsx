@@ -7,10 +7,10 @@ export default function EntryList() {
 
   return (
     <div className="entrydiv">
-      <ul className="listdiv">
+      <ul className="innerdiv">
         {entries.map((entry) => {
           return (
-            <li key={`${entry.name}-${entry.message}`}>
+            <li className="listdiv" key={`${entry.name}-${entry.message}`}>
               <Entry entry={entry} />
             </li>
           );

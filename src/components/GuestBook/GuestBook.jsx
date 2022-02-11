@@ -37,29 +37,33 @@ export default function GuestBook() {
 
   return (
     <div className="guestbookdiv">
-      <h1>Guest Entries</h1>
-      {!user && guestNameInput}
-      <form onSubmit={handleSubmit}>
-        {/*  */}
-        <label>Guest Entry</label>
-        <input
-          type="text"
-          id="guestEntry"
-          value={guestEntry}
-          placeholder="Your Entry Here!"
-          onChange={(e) => setGuestEntry(e.target.value)}
-        />
-        <button type="submit">Sign</button>
-        <button
-          onClick={() => {
-            setGuestEntry('');
-            setUser('');
-            setName('');
-          }}
-        >
-          Not {user} ?
-        </button>
-      </form>
+      <div className="guestinnerdiv">
+        <h1>Guest Entries</h1>
+        {!user && guestNameInput}
+        <form onSubmit={handleSubmit}>
+          {/*  */}
+          <label>Guest Entry</label>
+          <input
+            type="text"
+            id="guestEntry"
+            value={guestEntry}
+            placeholder="Your Entry Here!"
+            onChange={(e) => setGuestEntry(e.target.value)}
+          />
+          <div className="buttondiv">
+            <button type="submit">Sign</button>
+            <button
+              onClick={() => {
+                setGuestEntry('');
+                setUser('');
+                setName('');
+              }}
+            >
+              Not {user} ?
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
