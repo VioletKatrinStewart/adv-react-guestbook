@@ -34,19 +34,14 @@ export default function GuestBook() {
     </div>
   );
 
-  //   const displayMessage = user ? `Thanks for Signing ${user}!` : 'Please Sign the Guestbook!';
+  const displayMessage = user ? `Thanks for Signing ${user}!` : 'Please Sign the Guestbook!';
+
   return (
     <div>
       <h1>Form</h1>
+      {!user && guestNameInput}
       <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input
-          type="text"
-          id="nameEntry"
-          value={user}
-          placeholder="Write your name here"
-          onChange={(e) => setUser(e.target.value)}
-        />
+        {/*  */}
         <label>Guest Entry</label>
         <input
           type="text"
@@ -59,6 +54,7 @@ export default function GuestBook() {
         <button
           onClick={() => {
             setGuestEntry('');
+            setUser('');
             setName('');
           }}
         >
@@ -67,4 +63,15 @@ export default function GuestBook() {
       </form>
     </div>
   );
+}
+
+{
+  /* <label>Name</label>
+        <input
+          type="text"
+          id="nameEntry"
+          value={user}
+          placeholder="Write your name here"
+          onChange={(e) => setUser(e.target.value)}
+        /> */
 }
