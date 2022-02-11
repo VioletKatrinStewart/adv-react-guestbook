@@ -24,14 +24,16 @@ export default function GuestBook() {
 
   const guestNameInput = (
     <div>
-      <label>Guest Name</label>
-      <input
-        id="guestName"
-        type="text"
-        placeholder="Guest Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+      <label>
+        Guest Name
+        <input
+          id="guestName"
+          type="text"
+          placeholder="Guest Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
     </div>
   );
 
@@ -42,14 +44,16 @@ export default function GuestBook() {
         {!user && guestNameInput}
         <form onSubmit={handleSubmit}>
           {/*  */}
-          <label>Guest Entry</label>
-          <input
-            type="text"
-            id="guestEntry"
-            value={guestEntry}
-            placeholder="Your Entry Here!"
-            onChange={(e) => setGuestEntry(e.target.value)}
-          />
+          <label>
+            Guest Entry
+            <input
+              type="text"
+              id="guestEntry"
+              value={guestEntry}
+              placeholder="Your Entry Here!"
+              onChange={(e) => setGuestEntry(e.target.value)}
+            />
+          </label>
           <div className="buttondiv">
             <button type="submit">Sign</button>
             <button

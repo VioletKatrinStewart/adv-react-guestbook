@@ -1,4 +1,3 @@
-import './Entry.css';
 export default function Entry({ entry: { name, message } }) {
   return (
     <div>

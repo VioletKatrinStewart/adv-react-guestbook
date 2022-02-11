@@ -7,10 +7,9 @@ import { UserProvider } from '../../Context/UserContext';
 test('the guest entries header loads', () => {
   render(
     <UserProvider>
-      {' '}
       <EntryProvider>
-        <GuestBook />{' '}
-      </EntryProvider>{' '}
+        <GuestBook />
+      </EntryProvider>
     </UserProvider>
   );
   const header = screen.getByText(/Guest Entries/i);
