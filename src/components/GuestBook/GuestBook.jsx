@@ -39,6 +39,14 @@ export default function GuestBook() {
     <div>
       <h1>Form</h1>
       <form onSubmit={handleSubmit}>
+        <label>Name</label>
+        <input
+          type="text"
+          id="nameEntry"
+          value={user}
+          placeholder="Write your name here"
+          onChange={(e) => setUser(e.target.value)}
+        />
         <label>Guest Entry</label>
         <input
           type="text"
@@ -54,7 +62,7 @@ export default function GuestBook() {
             setName('');
           }}
         >
-          Not you ?
+          Not {user} ?
         </button>
       </form>
     </div>

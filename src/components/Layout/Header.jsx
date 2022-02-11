@@ -1,9 +1,8 @@
 import React from 'react';
-// import { useUser } from '../../context/UserContext';
+import { useUser } from '../../Context/UserContext';
 
 export default function Header() {
-  //   const { user } = useUser();
-  return <div>Hey! This is the header</div>;
-
-  //   <div>Hi {user ? 'user' : { user }}</div>;
+  const { user, setUser } = useUser();
+  if (user) return <div>Hi {user}</div>;
+  return <div>welcome to our guest book</div>;
 }
