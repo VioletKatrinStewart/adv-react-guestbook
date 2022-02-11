@@ -9,7 +9,6 @@ export default function Home() {
       <EntryProvider>
         <GuestBook />
         <EntryList />
-        <p>this is where guestbook and entry list go</p>
       </EntryProvider>
     </div>
   );
