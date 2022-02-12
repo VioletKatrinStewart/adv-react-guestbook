@@ -1,4 +1,4 @@
-import { getByRole, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 import { UserProvider } from './Context/UserContext';
 import { EntryProvider } from './Context/EntryContext';
