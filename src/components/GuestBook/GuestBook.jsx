@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEntries } from '../../Context/EntryContext';
 import { useUser } from '../../Context/UserContext';
+import { getAnimals } from '../../services/animals';
 import './GuestBook.css';
 
 export default function GuestBook() {
@@ -10,10 +11,11 @@ export default function GuestBook() {
   const { user, setUser } = useUser();
   const { entries, setEntries } = useEntries();
 
-  function updateGuest() {
+  async function updateGuest() {
     if (!guestEntry) return;
     setUser(name);
-    setEntries([...entries, { name, message: guestEntry }]);
+    const animalPic = await getAnimals();
+    setEntries([...entries, { image: animalPic.image_link, name, message: guestEntry }]);
     setGuestEntry('');
   }
 

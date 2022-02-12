@@ -35,4 +35,8 @@ li {
   border-radius: 1rem;
 }
 
+img {
+  width: 150px;
+  height: 150px;
+}
 /* rgb(214, 202, 226) */
