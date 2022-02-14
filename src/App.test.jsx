@@ -4,7 +4,7 @@ import { UserProvider } from './Context/UserContext';
 import { EntryProvider } from './Context/EntryContext';
 import userEvent from '@testing-library/user-event';
 
-test('test the button leaving a message with a name', () => {
+test.only('test the button leaving a message with a name', async () => {
   render(
     <UserProvider>
       <EntryProvider>
@@ -30,9 +30,8 @@ test('test the button leaving a message with a name', () => {
   expect(button).toBeInTheDocument();
 
   userEvent.click(button);
-
+  const input = await screen.findByText('Hi');
   const name = screen.getByText('Violet');
-  const input = screen.getByText('Hi');
 
   expect(name).toBeInTheDocument();
   expect(input).toBeInTheDocument();
