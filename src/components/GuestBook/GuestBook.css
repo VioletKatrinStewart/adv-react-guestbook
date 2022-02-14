@@ -1,0 +1,29 @@
+.guestbookdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: pink;
+  padding: 20px;
+  filter: drop-shadow(5px 5px 5px rgb(62, 62, 62));
+}
+
+.guestbookdiv button {
+  width: fit-content;
+  background-color: rgb(188, 215, 238);
+  color: white;
+  border-radius: 7px;
+  padding: 5px;
+  margin: 5px;
+  filter: drop-shadow(5px 5px 5px rgb(62, 62, 62));
+}
+
+.guestbookdiv input {
+  color: rgb(245, 150, 166);
+  background-color: white;
+}
+
+.guestinnerdiv {
+  background-color: rgb(214, 202, 226);
+  width: 100%;
+  border-radius: 1rem;
+}
