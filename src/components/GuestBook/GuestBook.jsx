@@ -13,7 +13,7 @@ export default function GuestBook() {
 
   async function updateGuest() {
     if (!guestEntry) return;
-    setUser(name);
+    // setUser(name);
     const animalPic = await getAnimals();
     setEntries([...entries, { image: animalPic.image_link, name, message: guestEntry }]);
     setGuestEntry('');
@@ -24,51 +24,52 @@ export default function GuestBook() {
     updateGuest();
   };
 
-  const guestNameInput = (
-    <div>
-      <label>
-        Guest Name
-        <input
-          id="guestName"
-          type="text"
-          placeholder="Guest Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
-    </div>
-  );
+  // const guestNameInput = (
+  //   <div>
+  //     <label>
+  //       Guest Name
+  //       <input
+  //         id="guestName"
+  //         type="text"
+  //         placeholder="Guest Name"
+  //         value={name}
+  //         onChange={(e) => setName(e.target.value)}
+  //       />
+  //     </label>
+  //   </div>
+  // );
 
   return (
     <div className="guestbookdiv">
       <div className="guestinnerdiv">
         <h1>Guest Entries</h1>
-        {!user && guestNameInput}
-        <form onSubmit={handleSubmit}>
-          {/*  */}
-          <label>
-            Guest Entry
-            <input
-              type="text"
-              id="guestEntry"
-              value={guestEntry}
-              placeholder="Your Entry Here!"
-              onChange={(e) => setGuestEntry(e.target.value)}
-            />
-          </label>
-          <div className="buttondiv">
-            <button type="submit">Sign</button>
-            <button
-              onClick={() => {
-                setGuestEntry('');
-                setUser('');
-                setName('');
-              }}
-            >
-              Not {user} ?
-            </button>
-          </div>
-        </form>
+        {!user && (
+          <form onSubmit={handleSubmit}>
+            {/*  */}
+            <label>
+              Guest Entry
+              <input
+                type="text"
+                id="guestEntry"
+                value={guestEntry}
+                placeholder="Your Entry Here!"
+                onChange={(e) => setGuestEntry(e.target.value)}
+              />
+            </label>
+            <div className="buttondiv">
+              <button type="submit">Sign</button>
+              <button
+                onClick={() => {
+                  setGuestEntry('');
+                  setUser(null);
+                  setName('');
+                }}
+              >
+                Not {user} ?
+              </button>
+            </div>
+          </form>
+        )}
       </div>
     </div>
   );
