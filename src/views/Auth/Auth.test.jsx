@@ -5,7 +5,7 @@ import { UserProvider } from '../../Context/UserContext';
 import Auth from './Auth';
 
 test('should render a Login form', () => {
-  render(
+  const container = render(
     <UserProvider>
       <MemoryRouter>
         <Auth />
@@ -24,4 +24,5 @@ test('should render a Login form', () => {
   expect(email).toBeInTheDocument();
   expect(password).toBeInTheDocument();
   expect(submit).toBeInTheDocument();
+  expect(container).toMatchSnapshot();
 });
