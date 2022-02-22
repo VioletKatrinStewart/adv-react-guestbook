@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Auth from './views/Auth/Auth';
-
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Layout from './views/Layout/Layout';
 import Home from './views/Home/Home';
 
@@ -14,9 +14,9 @@ function App() {
             <Route path="/login">
               <Auth />
             </Route>
-            <Route path="/">
+            <PrivateRoute path="/">
               <Home />
-            </Route>
+            </PrivateRoute>
           </Switch>
         </Layout>
       </BrowserRouter>
