@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useUser } from '../../Context/UserContext';
+import './Auth.css';
 
 export default function Auth() {
   const [email, setEmail] = useState('');
@@ -24,7 +25,7 @@ export default function Auth() {
 
   return (
     <div>
-      <form>
+      <form className="formcss">
         <label>Email:</label>
         <input id="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
         <label>Password:</label>
