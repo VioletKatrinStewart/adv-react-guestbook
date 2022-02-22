@@ -4,7 +4,7 @@ import { UserProvider } from './Context/UserContext';
 import { EntryProvider } from './Context/EntryContext';
 import userEvent from '@testing-library/user-event';
 
-test.only('test the button leaving a message with a name', async () => {
+test.skip('test the button leaving a message with a name', async () => {
   render(
     <UserProvider>
       <EntryProvider>
